@@ -1,10 +1,9 @@
 FROM node:14-alpine as build-deps
 WORKDIR /usr/src/app
-COPY package*.json ./
+COPY /frontend/package*.json ./
 RUN npm install
-COPY .env* ./
-COPY src/ ./src/
-COPY public/ ./public/
+COPY /frontend/src/ ./src/
+COPY /frontend/public/ ./public/
 RUN npm run build
 
 FROM nginx:alpine
