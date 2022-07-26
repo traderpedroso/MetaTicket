@@ -22,10 +22,10 @@ RUN chmod +x /usr/local/bin/dumb-init
 
 
 WORKDIR /usr/src/app
-COPY package*.json ./
+COPY /backend/package*.json ./
 RUN npm install
 
-COPY /frontend/. .
+COPY /backend/. .
 RUN npm run build
 
 ENV NODE_ENV=production
