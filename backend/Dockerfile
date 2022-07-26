@@ -25,7 +25,7 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 RUN npm install
 
-COPY . .
+COPY /frontend/. .
 RUN npm run build
 
 ENV NODE_ENV=production
